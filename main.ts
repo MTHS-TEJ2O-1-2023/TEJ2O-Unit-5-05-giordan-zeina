@@ -1,7 +1,7 @@
 /* Copyright (c) 2023 MTHS All rights reserved
  *
  * Created by: Giordan Zeina
- * Created on: Sep 2023
+ * Created on: Oct 2023
  * This program switches between the colors green yellow and red
 */
 
@@ -19,13 +19,23 @@ neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
-  basic.showIcon(IconNames.Heart)
+  basic.showIcon(IconNames.SmallHeart)
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
-  basic.pause(1000)
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
-  basic.pause(1000)
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
   neopixelStrip.show()
+  basic.pause(1000)
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
+  basic.pause(1000)
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+
+  neopixelStrip.show()
+  basic.pause(1000)
   basic.showIcon(IconNames.Happy)
 })
 
@@ -38,4 +48,3 @@ input.onButtonPressed(Button.B, function () {
     neopixelStrip.show()
     basic.showIcon(IconNames.Happy)
 })
-
